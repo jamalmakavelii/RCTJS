@@ -1,0 +1,266 @@
+/* Keyframes for gradient animation */
+.submit {
+  margin: 0;
+  padding: 0;
+  background-image: url(img/7598005.jpg);
+  background-color: rgba(105, 78, 78, 0.6);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+ }
+ .submit:hover {
+  background-color: #504141;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); /* Add shadow on hover */
+  transform: translateY(-2px); /* Add translateY effect on hover */
+}
+
+  .form {
+    width: 80%;
+    max-width: 600px; /* Adjust as needed */
+    margin: 50px auto;
+    background-color: #70fdab;
+    padding: 40px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(73, 1, 63, 0.1);
+  }
+  .form:hover {
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.8), 0 0 20px rgba(0, 128, 255, 0.5); /* Updated shadow on hover */
+    transform: scale(1.05); /* Updated scale effect on hover */
+  }
+  /* Price styles */
+  .price {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #1726f0;
+    animation: futuristicFadeIn 0.5s ease-in-out;
+  }
+  
+  /* New Function Button styles */
+  .newFunctionButton {
+    position: relative;
+    z-index: 1; /* Ensure the button is above the glow */
+  }
+
+ 
+  .newFunctionButton:hover::before {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  
+  .newFunctionButton:hover {
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.8), 0 0 20px rgba(0, 128, 255, 0.5); /* Add shadow on hover */
+    transform: translateY(-2px); /* Add translateY effect on hover */
+  }
+
+
+
+  .responsive-image {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+    animation: fadeInUp 0.5s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .responsive-image:hover {
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.8), 0 0 20px rgba(0, 128, 255, 0.5); /* Add shadow on hover */
+    transform: scale(1.1); /* Add scale effect on hover */
+  }
+
+  @media screen and (max-width: 600px) {
+    .form {
+      max-width: 100%; /* Adjust as needed for small screens */
+    }
+  }
+  
+
+  
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+  .submit {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  
+  .submit:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #000000,
+      #525151,
+      #13130e,
+      #52ff0e,
+      #68c7b7,
+      #ffffff,
+      #000000,
+      #f8f8f8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingsubmit 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowingsubmit {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .submit:active {
+    color: #000;
+  }
+  
+  .submit:active:after {
+    background: transparent;
+  }
+  
+  .submit:hover:before {
+    opacity: 1;
+  }
+  
+  .submit:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  
+
+
+
+.newFunctionButton {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.newFunctionButton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #000000,
+    #525151,
+    #13130e,
+    #52ff0e,
+    #68c7b7,
+    #ffffff,
+    #000000,
+    #f8f8f8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingnewFunctionButton 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingnewFunctionButton {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.newFunctionButton:active {
+  color: #000;
+}
+
+.newFunctionButton:active:after {
+  background: transparent;
+}
+
+.newFunctionButton:hover:before {
+  opacity: 1;
+}
+
+.newFunctionButton:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
