@@ -1,6 +1,104 @@
 import React, { useState } from 'react';
 import './styles.css';
 
+//Log In Form
+function
+ 
+LoginForm() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Placeholder authentication logic (replace with your actual implementation)
+    const userData = [
+      { username: 'user1', password: 'pass1' },
+      { username: 'user2', password: 'pass2' },
+    ].find((user) => user.username === username && user.password === password);
+
+    if (userData) {
+      // Successful login
+      console.log('Login successful!');
+      // Handle successful login (e.g., redirect to protected route)
+    } else {
+      setErrorMessage('Invalid username or password');
+    }
+  };
+
+  return (
+    <form
+ 
+onSubmit={handleSubmit}>
+
+      
+<div
+ 
+className="form-group">
+
+        
+<label
+ 
+htmlFor="username">Username:</label>
+
+        
+<input
+
+          
+type="text"
+
+          
+id="username"
+
+          
+name="username"
+
+          
+value={username}
+
+          
+onChange={(event) => setUsername(event.target.value)}
+          required
+        />
+      </div>
+
+      
+<div
+ 
+className="form-group">
+
+        
+<label
+ 
+htmlFor="password">Password:</label>
+
+        
+<input
+
+          
+type="password"
+
+          
+id="password"
+
+          
+name="password"
+
+          
+value={password}
+
+          
+onChange={(event) => setPassword(event.target.value)}
+          required
+        />
+      </div>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
 
 const TollFeeApp = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -10,10 +108,9 @@ const TollFeeApp = () => {
   const [selectedClass, setSelectedClass] = useState('');
   const [price, setPrice] = useState(null);
 
-
-  const handleOptionChange = (event) => {
+  function handleOptionChange(event) {
     setSelectedOption(event.target.value);
-  };
+  }
 
   const handlelocationdropdownChange = (event) => {
     setlocationdropdown(event.target.value);
@@ -31,9 +128,6 @@ const TollFeeApp = () => {
     setSelectedClass(event.target.value);
     setVehicleDropdown(''); // Reset selected vehicle when class changes
   };
-
-
-  
 
   const handleSubmit = () => {
     // Set the default price
@@ -14660,37 +14754,29 @@ if (
     
   };
 
-  
   const containerStyle = {
     margin: 0,
     padding: 0,
-    backgroundImage: "url('./7598005.jpg')",
+    backgroundImage: 'url(https://img.freepik.com/free-vector/toll-road-concept-illustration_114360-10370.jpg?w=900&t=st=1704943188~exp=1704943788~hmac=e394aa458fda4cafddd5652dd1b184c2130990d6d5f55d7cbf4e7b9d4df32e7d)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Darkened background color for contrast
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    transition: 'background-color 0.3s ease-in-out',
-    animation: 'fadeIn 0.5s ease-in-out',
     position: 'relative',
   };
   
   const formStyle = {
-    position: 'relative',
-    width: '300px',
-    marginBottom: '20px',
-    padding: '20px',
-    backgroundColor: '#70fdab',
-    boxShadow: '0 0 10px rgb(0, 153, 0)', 
-    marginTop: '20px',
-    transition: 'box-shadow 0.3s ease-in-out, border-color 0.5s ease-in-out',
-    animationName: 'pulse',
-    animationDuration: '1s',
-    animationTimingFunction: 'ease-in-out',
-    animationIterationCount: 'infinite',
+    width: '80%', // Wrap the percentage value in quotes
+    maxWidth: '550px', // Adjust as needed, and wrap the value in quotes
+    margin: '80px auto', // Wrap the value in quotes
+    backgroundColor: 'rgba(112, 253, 171, 0.9)', // Adjusted background color for the form
+    padding: '30px 15px', // Wrap the value in quotes
+    borderRadius: '3px', // Wrap the value in quotes
+    boxShadow: '0 0 10px rgba(73, 1, 63, 0.1)', // Wrap the value in quotes
   };
   
   const labelStyle = {
@@ -14727,18 +14813,14 @@ if (
   };
   
   const priceStyle = {
-    marginTop: '20px',
-    fontWeight: 'bold',
-    color: '#D6EFFF',
-    transition: 'color 0.3s ease-in-out',
-    animation: price ? 'fadeInUp 0.5s ease-in-out' : '',
-    border: '2px solid #000', 
-    padding: '10px',
-    borderRadius: '8px',
-    backgroundColor: '#000',
+    marginTop: '20px', // Wrap the value in quotes
+    border: '1px solid #ffffff',
+    padding: '10px', // Wrap the value in quotes
+    borderRadius: '5px', // Wrap the value in quotes
+    backgroundColor: '#ffffff',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   };
   
   const newFunctionButtonStyle = {
